@@ -41,9 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (keys.hasOwnProperty(e.code)) {
             keys[e.code] = true;
-            if (e.code === 'Space' && !gameStarted) {
-                gameStarted = true;
-                animate();
+            if (e.code === 'Space') {
+                if (!gameStarted) {
+                    gameStarted = true;
+                    animate();
+                } else {
+                    // Reset the game if it has ended
+                    resetGame();
+                }
             }
         }
     });
@@ -121,15 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 particles.splice(i, 1);
             }
         }
-    }
-
-    function drawParticles() {
-        particles.forEach(particle => {
-            ctx.beginPath();
-            ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(${particle.color}, ${particle.life})`;
-            ctx.fill();
-        });
     }
 
     function shoot() {
@@ -258,6 +254,16 @@ document.addEventListener('DOMContentLoaded', () => {
         draw();
         shoot();
         animationFrameId = requestAnimationFrame(animate);
+    }
+
+    function resetGame() {
+        // Reset game state
+        gameStarted = false;
+        score = 0;
+        bullets = [];
+        enemies = [];
+        particles = [];
+        draw(); // Draw the initial start screen
     }
 
     // Start the game loop
