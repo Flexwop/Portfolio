@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white font-['Poppins']">
+    <!-- Background Canvas -->
+    <canvas id="backgroundCanvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
+
+    <!-- Main Content -->
+    <div class="relative z-10">
+        <!-- Navigation -->
+        <nav class="fixed top-0 w-full bg-gray-900/80 backdrop-blur-sm border-b border-gray-700">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="text-2xl font-bold">Portfolio</div>
+                    <div class="space-x-8">
+                        <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                        <a href="#languages" class="hover:text-blue-400 transition">Languages</a>
+                        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center">
+            <div class="container mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Left Column - Game -->
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700">
+                    <h2 class="text-xl font-semibold mb-4">Mini Game</h2>
+                    <canvas id="gameCanvas" class="w-full rounded-lg bg-gray-900/50"></canvas>
+                </div>
+
+                <!-- Right Column - Intro -->
+                <div class="flex flex-col justify-center">
+                    <h1 class="text-5xl font-bold mb-6">Hi, I'm <span class="text-blue-400">Developer</span></h1>
+                    <p class="text-xl text-gray-300 mb-8">A passionate software developer crafting digital experiences.</p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg transition">View Projects</a>
+                        <a href="#contact" class="px-6 py-3 border border-blue-500 hover:bg-blue-500/10 rounded-lg transition">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 bg-gray-800/30">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-12">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Cards -->
+                    <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition">
+                        <div class="h-48 bg-gray-700 rounded-lg mb-4"></div>
+                        <h3 class="text-xl font-semibold mb-2">Project 1</h3>
+                        <p class="text-gray-400">Description of the amazing project goes here.</p>
+                    </div>
+                    <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition">
+                        <div class="h-48 bg-gray-700 rounded-lg mb-4"></div>
+                        <h3 class="text-xl font-semibold mb-2">Project 2</h3>
+                        <p class="text-gray-400">Description of the amazing project goes here.</p>
+                    </div>
+                    <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition">
+                        <div class="h-48 bg-gray-700 rounded-lg mb-4"></div>
+                        <h3 class="text-xl font-semibold mb-2">Project 3</h3>
+                        <p class="text-gray-400">Description of the amazing project goes here.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages Section -->
+        <section id="languages" class="py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-12">Programming Languages</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <!-- Language Cards -->
+                    <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 flex flex-col items-center">
+                        <i class="fab fa-python text-5xl mb-4 text-blue-400"></i>
+                        <h3 class="text-xl font-semibold">Python</h3>
+                    </div>
+                    <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 flex flex-col items-center">
+                        <i class="fab fa-js text-5xl mb-4 text-yellow-400"></i>
+                        <h3 class="text-xl font-semibold">JavaScript</h3>
+                    </div>
+                    <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 flex flex-col items-center">
+                        <i class="fab fa-java text-5xl mb-4 text-red-400"></i>
+                        <h3 class="text-xl font-semibold">Java</h3>
+                    </div>
+                    <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 flex flex-col items-center">
+                        <i class="fab fa-html5 text-5xl mb-4 text-orange-400"></i>
+                        <h3 class="text-xl font-semibold">HTML/CSS</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-gray-800/30">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold mb-8">Get In Touch</h2>
+                <p class="text-xl text-gray-300 mb-8">Interested in working together? Let's connect!</p>
+                <a href="mailto:contact@example.com" class="px-8 py-4 bg-blue-500 hover:bg-blue-600 rounded-lg inline-block transition">
+                    Send Message
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-8 border-t border-gray-700">
+            <div class="container mx-auto px-6 text-center text-gray-400">
+                <p>&copy; 2024 Portfolio. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="particles.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
