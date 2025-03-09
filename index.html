@@ -122,5 +122,12 @@
 
     <script src="particles.js"></script>
     <script src="game.js"></script>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.code === 'Space') {
+                event.preventDefault(); // Prevent scrolling
+            }
+        });
+    </script>
 </body>
 </html>
